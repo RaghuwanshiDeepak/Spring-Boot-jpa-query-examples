@@ -14,6 +14,7 @@ public class BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private long createdDate;
+    private boolean deleted;
 
     @PrePersist
     public void setCreatedDate() {

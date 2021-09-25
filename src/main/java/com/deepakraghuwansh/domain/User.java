@@ -10,7 +10,10 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "user")
+@Table(name = "user", indexes = {
+        @Index(name = "idx_user_id", columnList = "id"),
+        @Index(name = "idx_user_username", columnList = "userName")
+})
 @Inheritance(strategy = InheritanceType.JOINED)
 public class User extends BaseEntity {
     @Column(nullable = false, unique = true)
